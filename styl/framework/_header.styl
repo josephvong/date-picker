@@ -1,0 +1,28 @@
+.date-picker
+	+prefix-classes('dp-')  // 给类名添加 自定义的固定前缀 “dp-”
+		.header
+			position:relative
+			height:header-height
+			width:100%
+			h3
+				text-align:center
+				line-height: header-height
+				font-size:1.2rem;
+				font-weight:normal
+				margin :0
+			button
+				display:block
+				position:absolute
+				top:0
+				background:white
+				border:none
+				color:gray
+				padding:0
+				height header-height - 1px
+				line-height header-height - 1px
+				width: 3rem
+				&.close-button
+					left:0
+				&.confirm-button
+					right:0
+					font-size:1rem

@@ -1,0 +1,27 @@
+@import '../node_modules/colors.css/stylus/variables.styl'
+@import './framework/_variables.styl'
+
+
+
+.date-picker
+	position fixed  // 固定定位 覆盖容器
+	left: 0
+	right:0
+	top:0
+	bottom:0
+	display:flex  // 弹性布局
+	flex-direction:column // 纵向排列
+	background:white
+	&.static			// 静态模板的情况下 定位为 相对
+		position relative
+
+		.dp-container
+			flex :1   // 自动占据有剩余空间
+
+
+
+@import './framework/_header.styl'
+@import './framework/_labels.styl'
+@import './framework/_calendar.styl'
+
+

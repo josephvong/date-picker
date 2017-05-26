@@ -1,0 +1,72 @@
+.date-picker
+	+prefix-classes('dp-')  // 给类名添加 自定义的固定前缀 “dp-”
+		.calendar-item
+			header
+				bottom: 1px solid border-color
+				margin-bottom 1rem
+
+				h4
+					color aqua
+					text-align center
+					margin 0
+					line-height 3.25
+					font-weight normal
+
+			ul
+				display flex
+				flex-wrap wrap
+				margin 0
+				padding 0
+				border-bottom 1px solid border-color
+
+				li
+					list-style none
+					min-width 14.285714%  // 定义每行固定7格
+					max-width 14.285714%
+					flex 1 1 14.285714%
+					text-align center
+					line-height 3rem
+					margin-bottom 1rem
+
+					for n in (0..6)
+						saturday = 8 - n  //  7n-n+1
+						sunday = 9 - n  // 7n-n+2
+
+						&.empty-{n}
+							counter-reset date
+							flex n n 14.285714% * n
+							min-width 14.285714% * n
+							max-width 100%
+
+							~:nth-child(7n + {saturday}),
+							~:nth-child(7n + {sunday})
+								color orange
+
+
+					&:not(:first-child):before
+						content counter(date)
+						counter-increment date
+
+					&.today
+						position relative
+
+						&:after
+							content:''
+							position absolute
+							width point-radius //4rem
+							height point-radius //4rem
+							line-height point-radius
+							font-size point-radius
+							border-radius 50%
+							left 50%
+							bottom 0.5rem
+							margin-left -(point-radius / 2)
+							background red
+					&.disabled
+						color gray !important  // 此处添加important 是因为 要 控制 disabled 的权重比周末的样式高
+
+					&.select
+						background radial-gradient(circle at center, aqua 0, aqua 60%, transparent 68%, transparent 100% )
+
+
+

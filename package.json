@@ -1,0 +1,16 @@
+{
+  "name": "date-picker",
+  "version": "1.0.0",
+  "description": "a date-picker",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "stylus:watch": "mkdir css & stylus -w -m styl/ -o css/"
+  },
+  "author": "joseph",
+  "license": "ISC",
+  "devDependencies": {
+    "colors.css": "^2.3.0",
+    "normalize.css": "^7.0.0"
+  }
+}
