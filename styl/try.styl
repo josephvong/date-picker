@@ -1,0 +1,23 @@
+newData = 1;
+font = 20px
+
+body
+	counter-reset:newData
+	h1
+		counter-reset:newData
+		&:before
+			content:'Section' counter(newData) '.'
+			counter-increment:newData
+	h2:before
+		counter-increment:subsection
+		content counter(section) '.' counter(subsection) '.'
+/*.test
+	padding:0
+	border:1px solid red
+	li
+		counter-reset 1
+		&:after
+			content counter(1)
+			counter-increment 1*/
+#fontTest
+	font-size font

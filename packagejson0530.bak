@@ -4,7 +4,7 @@
   "description": "a date-picker",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --require babel-core/register",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "stylus:watch": "mkdir css & stylus -w -m styl/ -o css/"
   },
   "author": "joseph",
@@ -12,7 +12,6 @@
   "devDependencies": {
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
-    "babel-preset-env": "^1.5.1",
     "colors.css": "^2.3.0",
     "mocha": "^3.4.2",
     "normalize.css": "^7.0.0",
