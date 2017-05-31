@@ -1,23 +1,41 @@
-newData = 1;
+//newData = 1;
 font = 20px
+//data = 5
 
 body
-	counter-reset:newData
+	counter-reset:section
 	h1
-		counter-reset:newData
+		counter-reset:subsection
+		color:red
 		&:before
-			content:'Section' counter(newData) '.'
-			counter-increment:newData
-	h2:before
-		counter-increment:subsection
-		content counter(section) '.' counter(subsection) '.'
-/*.test
+			content:'Section' counter(section) '.'
+			counter-increment:section
+
+	h2
+		color:blue
+		&:before
+			counter-increment:subsection
+			content counter(section) '.' counter(subsection) '.'
+
+.test
 	padding:0
 	border:1px solid red
+	counter-reset li
+	li:after
+		content counter(li)
+		counter-increment li
+.newtest
+	padding:0
+	border:1px solid blue
 	li
-		counter-reset 1
-		&:after
-			content counter(1)
-			counter-increment 1*/
+		color:red
+		&:first-child
+			counter-reset:data
+			color:green
+		&:before
+			content counter(data)
+			counter-increment data
+
+
 #fontTest
 	font-size font

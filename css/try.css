@@ -1,25 +1,45 @@
 body {
-  counter-reset: 1;
+  counter-reset: section;
 }
 body h1 {
-  counter-reset: 1;
+  counter-reset: subsection;
+  color: #f00;
 }
 body h1:before {
-  content: 'Section' counter(1) '.';
-  counter-increment: 1;
+  content: 'Section' counter(section) '.';
+  counter-increment: section;
+}
+body h2 {
+  color: #00f;
 }
 body h2:before {
   counter-increment: subsection;
   content: counter(section) '.' counter(subsection) '.';
 }
-/*.test
-	padding:0
-	border:1px solid red
-	li
-		counter-reset 1
-		&:after
-			content counter(1)
-			counter-increment 1*/
+.test {
+  padding: 0;
+  border: 1px solid #f00;
+  counter-reset: li;
+}
+.test li:after {
+  content: counter(li);
+  counter-increment: li;
+}
+.newtest {
+  padding: 0;
+  border: 1px solid #00f;
+}
+.newtest li {
+  color: #f00;
+}
+.newtest li:first-child {
+  counter-reset: data;
+  color: #008000;
+}
+.newtest li:before {
+  content: counter(data);
+  counter-increment: data;
+}
 #fontTest {
   font-size: 20px;
 }
