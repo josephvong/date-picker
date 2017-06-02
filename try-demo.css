@@ -1,0 +1,14 @@
+html,
+body {
+  height: 100%;
+}
+body {
+  background: #808080;
+}
+.container {
+  width: 375px;
+  height: 677px;
+  background: #fff;
+  margin: 2rem auto;
+  position: relative;
+}

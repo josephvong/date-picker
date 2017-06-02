@@ -1,41 +1,27 @@
-//newData = 1;
-font = 20px
-//data = 5
-
-body
-	counter-reset:section
-	h1
-		counter-reset:subsection
-		color:red
-		&:before
-			content:'Section' counter(section) '.'
-			counter-increment:section
-
-	h2
-		color:blue
-		&:before
-			counter-increment:subsection
-			content counter(section) '.' counter(subsection) '.'
-
-.test
-	padding:0
-	border:1px solid red
-	counter-reset li
-	li:after
-		content counter(li)
-		counter-increment li
-.newtest
-	padding:0
-	border:1px solid blue
-	li
-		color:red
-		&:first-child
-			counter-reset:data
-			color:green
-		&:before
-			content counter(data)
-			counter-increment data
+@import "./try-frame/variable.styl"
+.date-picker
+	position:fixed // 正式上线是用 fixed 定位
+	left:0
+	right:0
+	top:0
+	bottom:0
+	display:flex
+	flex-direction:column
+	&.static
+		position absolute
+	.dp-container
+		flex:1 1 auto
+		header
+			width:100%
+			height:40px
+			line-height:40px
+			text-align:center
+		.test
+			display:inline-block
+			width:100vw
+			border-bottom:1px solid blue
 
 
-#fontTest
-	font-size font
+@import "./try-frame/header.styl"
+@import "./try-frame/label.styl"
+@import "./try-frame/calendar.styl"
