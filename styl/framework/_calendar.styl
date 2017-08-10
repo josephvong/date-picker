@@ -38,7 +38,7 @@
 							min-width 14.285714% * n
 							max-width 100%
 
-							~:nth-child(7n + {saturday}),
+							~:nth-child(7n + {saturday}), //n=0 sat=8,一行正常日期 是7个，正常日期前还有个.empty 节点
 							~:nth-child(7n + {sunday})
 								color orange
 
